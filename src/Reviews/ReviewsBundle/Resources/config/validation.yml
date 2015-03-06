@@ -1,0 +1,13 @@
+Reviews\ReviewsBundle\Form\Type\ContactType:
+    properties:
+        name:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email:
+                message: The email "{{ value }}" is not a valid email.
+                checkMX: true
+        subject:
+            - NotBlank: ~
+        message:
+            - NotBlank: ~

@@ -1,0 +1,12 @@
+{# src/Reviews/ReviewsBundle/Resources/views/Page/contact.html.twig #}
+{% extends 'ReviewsReviewsBundle::layout.html.twig' %}
+
+{% block title %}Contacts{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact details</h1>
+    </header>
+    {% include 'ReviewsReviewsBundle:widgets:direct_contact.html.twig' %}
+    {% include 'ReviewsReviewsBundle:widgets:contact_us_form.html.twig' with {'form': form} only %}
+{% endblock %}

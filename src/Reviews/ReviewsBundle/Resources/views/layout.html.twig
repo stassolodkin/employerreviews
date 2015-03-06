@@ -1,0 +1,10 @@
+{# src/Reviews/ReviewsBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+{% block sidebar_left %}
+    <ul class="links-left">
+		<li><a href="{{ path('ReviewsReviewsBundle_top_ten') }}">Top 10</a></li>
+	</ul>
+{% endblock %}
+{% block sidebar_right %}
+	right bar content
+{% endblock %}

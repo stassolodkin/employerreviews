@@ -1,0 +1,57 @@
+<!-- app/Resources/views/base.html.twig -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<title>{% block title %}Employer Reviews{% endblock %}</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		{% block stylesheets %}
+			<link href='http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Titillium+Web' rel='stylesheet' type='text/css'>
+			<link href='http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans+Condensed' rel='stylesheet' type='text/css'>
+			<link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
+		{% endblock %}
+		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+	</head>
+	<body>
+
+		<section id="wrapper">
+			<header id="header">
+				<div class="top">
+					{% block navigation %}
+						<nav>
+							<ul class="navigation">
+								<li><a href="{{ path('ReviewsReviewsBundle_homepage') }}">Home</a></li>
+								<li><a href="{{ path('ReviewsReviewsBundle_about') }}">About</a></li>
+								<li><a href="{{ path('ReviewsReviewsBundle_contact') }}">Contact</a></li>
+							</ul>
+						</nav>
+					{% endblock %}
+				</div>
+
+				<hgroup>
+					<h2>{% block reviews_title %}<a href="#">Employer Reviews</a>{% endblock %}</h2>
+					<h3>{% block reviews_tagline %}<a href="#">Rate Your Employer</a>{% endblock %}</h3>
+				</hgroup>
+			</header>
+			<aside class="sidebar_left">
+				{% block sidebar_left %}{% endblock %}
+			</aside>
+			<main class="main-col">
+				{% block body %}{% endblock %}
+			</main>
+			<aside class="sidebar_right">
+				{% block sidebar_right %}{% endblock %}
+			</aside>
+
+			<div id="footer">
+				{% block footer %}
+					Employer Reviews created by <a href="#">PatchMonkey</a>
+				{% endblock %}
+			</div>
+		</section>
+
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>

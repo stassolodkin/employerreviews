@@ -1,0 +1,14 @@
+{# src/Reviews/ReviewsBundle/Resources/views/Page/email_sent.html.twig #}
+{% extends 'ReviewsReviewsBundle::layout.html.twig' %}
+
+{% block title %}Email Sent{% endblock%}
+
+{% block body %}
+    {% for label, flashes in app.session.flashbag.all %}
+	    {% for flash in flashes %}
+	        <div class="alert alert-{{ label }}">
+	            {{ flash }}
+	        </div>
+	    {% endfor %}
+	{% endfor %}
+{% endblock %}

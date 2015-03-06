@@ -1,0 +1,40 @@
+# src/Reviews/ReviewsBundle/Resources/config/routing.yml
+ReviewsReviewsBundle_homepage:
+    pattern:  /
+    defaults: { _controller: ReviewsReviewsBundle:Page:index }
+    requirements:
+        _method:  GET
+
+ReviewsReviewsBundle_about:
+    pattern:  /about
+    defaults: { _controller: ReviewsReviewsBundle:Page:about }
+    requirements:
+        _method:  GET
+
+ReviewsReviewsBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: ReviewsReviewsBundle:Page:contact }
+    requirements:
+
+ReviewsReviewsBundle_email_sent:
+    pattern:  /email_sent
+    defaults: { _controller: ReviewsReviewsBundle:Page:emailSent }
+    requirements:
+
+ReviewsReviewsBundle_top_ten:
+    pattern:  /topten
+    defaults: { _controller: ReviewsReviewsBundle:Page:topTen }
+    requirements:
+        _method:  GET
+
+ReviewsReviewsBundle_employer_search:
+    pattern:  /employer_search
+    defaults: { _controller: ReviewsReviewsBundle:Page:employerSearch }
+    requirements:
+        _method:  GET
+
+ReviewsReviewsBundle_employer_search_results:
+    pattern:  /employer_search_results
+    defaults: { _controller: ReviewsReviewsBundle:Page:employerSearchResults }
+    requirements:
+        _method:  GET

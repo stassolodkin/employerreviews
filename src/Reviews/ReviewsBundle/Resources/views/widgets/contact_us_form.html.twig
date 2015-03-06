@@ -1,0 +1,38 @@
+{# src/Reviews/ReviewsBundle/Resources/views/widgets/contact_us_form.html.twig #}
+{% form_theme form  'ReviewsReviewsBundle:widgets:form_fields.html.twig' %}
+<link href="{{ asset('css/widgets/contact_us_widget.css') }}" type="text/css" rel="stylesheet" />
+<div class="contact-us">
+	{{ form_start(form, {'method': 'POST', 'attr': {'class': 'contact-form'}} ) }}
+		{{ form_errors(form) }}
+		<ul>
+			<li>
+				<h4>Contact Form</h4>
+				 <span class="required-notification"><div class="required-image"></div> Denotes Required Field</span>
+			</li>
+			<li>
+				{{ form_label(form.name) }}
+				{{ form_widget(form.name, {'attr': {'placeholder': 'John Smith'}} ) }}
+				{{ form_errors(form.name) }}
+			</li>
+			<li>
+				{{ form_label(form.email) }}
+				{{ form_widget(form.email, {'attr': {'placeholder': 'john.smith@example.com'}} ) }}
+				{{ form_errors(form.email, {'attr': {'class': 'contact-form-error'}} ) }}
+				<span class="contact-form-hint">Proper format "name@something.com"</span>
+			</li>
+			<li>
+				{{ form_label(form.subject) }}
+				{{ form_widget(form.subject, {'attr': {'placeholder': 'Subject line...'}} ) }}
+				{{ form_errors(form.subject) }}
+			</li>
+			<li>
+				{{ form_label(form.message) }}
+				{{ form_widget(form.message, {'attr': {'placeholder': 'Message text...', 'cols': '40', 'rows': '6'}} ) }}
+				{{ form_errors(form.message) }}
+			</li>
+			<li>
+				{{ form_widget(form.submit, {'attr': {'class': 'submit'}} ) }}
+			</li>
+		</ul>
+	{{form_end(form)}}
+</div>
