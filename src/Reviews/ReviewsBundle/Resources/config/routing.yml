@@ -3,7 +3,6 @@ ReviewsReviewsBundle_homepage:
     pattern:  /
     defaults: { _controller: ReviewsReviewsBundle:Page:index }
     requirements:
-        _method:  GET
 
 ReviewsReviewsBundle_about:
     pattern:  /about

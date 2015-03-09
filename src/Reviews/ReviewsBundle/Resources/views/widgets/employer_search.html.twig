@@ -1,8 +1,16 @@
 {# src/Reviews/ReviewsBundle/Resources/views/widgets/employer_search.html.twig #}
+<!--<link href="{{ asset('css/widgets/contact_us_widget.css') }}" type="text/css" rel="stylesheet" />-->
 <link href="{{ asset('css/widgets/employer_search_widget.css') }}" type="text/css" rel="stylesheet" />
-<section id="employer_search_widget" class="employer-search-widget">
-	<form id="employer_search_form" class="employer-search-form" action="http://gurustop.net" method="post">
-		<input type="search" id="employer_search_input" class="employer-search-inut" name="employer_name"/><br/>
-		<input type="submit" id="employer_search_submit" class="employer-search-submit" value="Search Employer" />
-	</form>
-</section>
+{% form_theme form  'ReviewsReviewsBundle:widgets:form_fields.html.twig' %}
+
+<div class="search_title">
+				<h2>Search Companies</h2>
+</div>
+<div id="employer_search_widget" class="employer-search-widget">
+	{{ form_start(form, {'method': 'POST', 'attr': {'id':'employer_search_form', 'class': 'employer-search-form'}} ) }}
+		{{ form_errors(form) }}
+				{{ form_errors(form.search_data) }}
+				{{ form_widget(form.search_data, {'attr': {'placeholder': 'Company name...'}} ) }}
+				{{ form_widget(form.submit, {'attr': {'class': 'submit'}} ) }}
+	{{form_end(form)}}
+</div>

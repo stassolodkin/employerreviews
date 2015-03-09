@@ -166,7 +166,7 @@ button.submit:active {
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
 
-.contact-form-error {
+.form-error {
 	color: #d45252 !important;
 	display: inline;
 }

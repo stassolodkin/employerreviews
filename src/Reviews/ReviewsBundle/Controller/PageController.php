@@ -7,8 +7,31 @@ use Symfony\Component\HttpFoundation\Request;
 use Reviews\ReviewsBundle\Form\Type\ContactType;
 
 class PageController extends Controller {
-	public function indexAction() {
-		return $this->render('ReviewsReviewsBundle:Page:index.html.twig');
+
+	public function indexAction(Request $request) {
+
+		$searchField = array('message' => 'Type your message here');
+		$form = $this->createFormBuilder($searchField)
+				->add('search_data', 'text')
+				->add('submit', 'submit', array('label' => 'Search'))
+				->getForm();
+
+		$form->handleRequest($request);
+
+		if ($form->isValid()) {
+
+			print("whoo");die();
+
+			$request->getSession()->getFlashBag()->add('success', 'Your email has been sent! Thanks!');
+
+			// perform some action, such as saving the task to the database
+
+			return $this->redirect($this->generateUrl('ReviewsReviewsBundle_email_sent'));
+		}
+
+		return $this->render('ReviewsReviewsBundle:Page:index.html.twig', array(
+			'form' => $form->createView(),
+		));
 	}
 
 	public function aboutAction() {
